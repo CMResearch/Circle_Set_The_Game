@@ -6,7 +6,7 @@ public class FirstAttempt {
 
 
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
+
 		String calves[] = {"Alpha", "Bravo", "Charlie", "Delta",};
 		double sWeight[]= {200, 201,202,203,204};
 		double fWeight[] = {350, 385, 406, 372, 392};
@@ -46,10 +46,6 @@ public class FirstAttempt {
 			
 			
 		}
-		
-		
-		
-		
 		
 		
 		// Synchronize the arrays
