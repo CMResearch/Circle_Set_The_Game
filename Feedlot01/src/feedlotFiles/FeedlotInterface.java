@@ -13,24 +13,29 @@ import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.JTextArea;
-
+import javax.swing.JTextField;
+import feedlotFiles.*;
 
 public class FeedlotInterface {
+	
 	JButton ImageButton;
 	JButton ArchiveButton;
 	JButton UserInputButton;
+	JButton FeederButton;
+	JButton BreederButton;
+	JButton BackgroundButton;
 	JButton ExitButton;
 	
 	JFrame Fframe = new JFrame("Big Sky Ranch");
-	String instruct = " Welcome to Big Sky Ranch.\nWe are a third-generation ranching"
-			+ " operation.\n\nIn addition to raising our own herds, we also provide custom feeding, "
-			+ "and backgrounding services.\n\nPlease select from the following options for your report. ";
+	String intro = "  Welcome to Big Sky Ranch, a third-generation ranching"
+			+ " operation.\n  In addition to raising our own herds, we also provide custom feeding, "
+			+ "and backgrounding services.\n\n  Please select from the following options for your report.\n ";
 	
 
 	// Constructor
 	public FeedlotInterface(){
 		// Create the interface window and set it up
-		addFrameComps();			
+		addFrameElements();			
 		Fframe.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		Fframe.setResizable(false);
 		Fframe.pack();
@@ -38,98 +43,118 @@ public class FeedlotInterface {
 		Fframe.setVisible(true);
 	}
 
+	private void addFrameElements(){
 		
-	private void addFrameComps(){
-		// set layout
-
+		//Photo Panel at the top
+		JPanel picture = new JPanel();
+		picture.setLayout(new GridLayout (1, 1));
 		
-		//Image Panel
-		JPanel Image = new JPanel();
-		Image.setLayout(new GridLayout(1, 1));
-		
-		//ImageIcon header = new ImageIcon(getClass().getResource("Ranch.jpg"));			
-		ImageIcon header = new ImageIcon(getClass().getResource("Ranch.jpg"));
+		ImageIcon topPicture = new ImageIcon(getClass().getResource("Ranch.jpg"));
 		ImageButton = new JButton();
-		ImageButton.setBackground(Color.GREEN);
-		ImageButton.setForeground(Color.BLACK);
-		ImageButton.setPreferredSize(new Dimension(720, 350));
-		ImageButton.setIcon(header);
-		Image.add(ImageButton);
+		ImageButton.setBackground(Color.GRAY);
+		ImageButton.setPreferredSize(new Dimension (800,250));
+		ImageButton.setIcon(topPicture);
+		picture.add(ImageButton);
 		
+		// Greeting panel in the center
+		JTextArea greeting = new JTextArea (intro);
 		
-		//INstructions Panel
-		JTextArea instructions = new JTextArea (instruct);
-
-		instructions.setBackground(Color.CYAN);
-		instructions.setForeground(Color.WHITE);
-		instructions.setFont(new Font("Monospace", Font.PLAIN, 16));
-		instructions.setLineWrap(true);
-		instructions.setWrapStyleWord(true);
+		greeting.setBackground(Color.CYAN);
+		greeting.setForeground(Color.BLACK);
+		greeting.setFont(new Font("Monospace", Font.PLAIN, 16));
+		greeting.setLineWrap(true);
+		greeting.setWrapStyleWord(true);
 		
-		//Button Headings Panel
-		JPanel headliner = new JPanel();
-		headliner.setLayout(new GridLayout(1, 2));
+		// Buttons at the bottom
+		
+		JPanel buttons = new JPanel();
+		buttons.setLayout(new GridLayout(1,6));
 		
 		// BUTTONS WITH ACTION LISTENERS
 		// Took advantage from sample code found on
 		//javaprogrammingforums: 
 		// http://www.javaprogrammingforums.com/java-swing-tutorials/278-how-add-actionlistener-jbutton-swing.html
-			 ArchiveButton = new JButton("ARCHIVE");
-			 /*ArchiveButton.addActionListener(new ActionListener(){
+		
+		FeederButton = new JButton("FEEDER");
+		FeederButton.addActionListener(new ActionListener(){
+		
+			public void actionPerformed(ActionEvent a){
+				// Access the array symchro method/class
+				//NaaviClass blue = new NaaviClass();
+				//blue.displayXfile();
+		}
+	});
+		BreederButton = new JButton("BREEDER");
+		BreederButton.addActionListener(new ActionListener(){
+		
+			public void actionPerformed(ActionEvent b){
+				// 
+				BreederCalves herd = new BreederCalves();
+				herd.ReportDisplay();
+		}
+	});
+		
+		BackgroundButton = new JButton("BACKGROUND");
+		BackgroundButton.addActionListener(new ActionListener(){
+		
+			public void actionPerformed(ActionEvent c){
+				// Access the array symchro method/class
+				//NaaviClass blue = new NaaviClass();
+				//blue.displayXfile();
+		}
+	});
+		
+			ArchiveButton = new JButton("ARCHIVE");
+			ArchiveButton.addActionListener(new ActionListener(){
 			
-	            public void actionPerformed(ActionEvent e){
-	            
-	                //Execute when button is pressed
-	        		NaaviClass blue = new NaaviClass();
-	        		blue.displayXfile();
-	            
-	        });*/
+				public void actionPerformed(ActionEvent d){
+					// Access the array symchro class
+					//ConsoleClass runMe = new ConsoleClass();
+					//runMe.SynchronizeArrays();
+					FirstAttempt oldschool = new FirstAttempt();
+					
 				
+			}
+		});
+		
 			UserInputButton = new JButton("USER INPUT");
-			/*UserInputButton.addActionListener(new ActionListener(){
+			UserInputButton.addActionListener(new ActionListener(){
 				
-	            public void actionPerformed(ActionEvent e){
-	            
-	                //Execute when button is pressed
-	        		ArachnidClass tiger = new ArachnidClass();
-	        		tiger.displayXfile();
-	            }
-	        });*/
+				public void actionPerformed(ActionEvent e){
+					//Access the user input class /method
+					//
+					//
+				}
+			});
 			
 			ExitButton = new JButton("EXIT");
-						
-			
-			
-						
-		
-		
-		headliner.add(ArchiveButton);
-		headliner.add(UserInputButton);
-
-		headliner.add(ExitButton);
-		
-		
-	
-		
-		//Main Panel
-		BorderLayout FborderLayout = new BorderLayout();
-		
-		JPanel mainPanel = new JPanel(FborderLayout);
-		
-		mainPanel.setSize(1024, 1024);
-		mainPanel.add(Image, FborderLayout.PAGE_START);
-		mainPanel.add(instructions, FborderLayout.CENTER);
-		mainPanel.add(headliner, FborderLayout.PAGE_END);
-		//mainPanel.add(characteristics, borderLayout.PAGE_END);
-		//mainPanel.add(entry, borderLayout.EAST);
-		
-		
-		Fframe.getContentPane().add(mainPanel);
+			ExitButton.addActionListener(new ActionListener(){
+				
+				public void actionPerformed(ActionEvent f){
+					//close the window
+					//
+					//
 					
+				}
+			});
+			
+			buttons.add(FeederButton);
+			buttons.add(BreederButton);
+			buttons.add(BackgroundButton);		
+			buttons.add(ArchiveButton);
+			buttons.add(UserInputButton);
+			buttons.add(ExitButton);
+			
+			//Main panel
+			BorderLayout borderLayout = new BorderLayout();
+			JPanel mainP = new JPanel(borderLayout);
+			mainP.setSize(1024, 2048);
+			mainP.add(picture, borderLayout.PAGE_START);
+			mainP.add(greeting, borderLayout.CENTER);
+			mainP.add(buttons, borderLayout.PAGE_END);
+			
+			Fframe.getContentPane().add(mainP);
 	}
-	
-	
-	
-	
+		
 	
 }

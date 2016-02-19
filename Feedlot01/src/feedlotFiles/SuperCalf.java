@@ -14,6 +14,7 @@ import javax.swing.*;
 public class SuperCalf {
 	
 	// DECLARE THE VARIABLES
+	private String type;
 	private String name; //Calf name
 	private String earTag;
 	private String breed;
@@ -28,26 +29,36 @@ public class SuperCalf {
 	private double startWeight;
 	private double finishWeight;
 	private ImageIcon photo;
+	private String info;
+	
+	private JButton cpicButton;
+	private JFrame ReportFrame = new JFrame("Report");
+	private BorderLayout borderLayout = new BorderLayout();
+	private JPanel mainPanel = new JPanel(borderLayout);
 	
 	// CONSTRUCTORS
 	
 	public SuperCalf(){
+		type = "Unspecified Type";
 		name = "Unregistered";
 		earTag = "N/A";
-		breed = "";
-		color = "";
-		owner = "";
-		productivity = "";
-		source = "";
+		breed = "n/a";
+		color = "n/a";
+		owner = "n/a";
+		productivity = "n/a";
+		source = "n/a";
 		horns = "No horns";
-		hormones = "";
-		diet = "";		
+		hormones = "n/a";
+		diet = "n/a";		
 		antibiotics = "No meds";
 		startWeight = 0.0;
 		finishWeight = 0.0;
-	}
+		info = "no info";
+		photo = new ImageIcon(getClass().getResource("Cow.jpg"));
+		}
 	
 	public SuperCalf(String n, String o){ // n for name, o for owner
+		type = "Unspecified Type";
 		name = n;
 		earTag = "None";
 		breed = "Anyone's Guess";
@@ -59,7 +70,9 @@ public class SuperCalf {
 		hormones = "No hormones";
 		antibiotics = "Unmedicated";
 		startWeight = 0.0;
-		finishWeight = 0.0;		
+		finishWeight = 0.0;	
+		info = "";
+		photo = new ImageIcon(getClass().getResource("Cow.jpg"));
 	}	
 		
 	//GET METHODS
@@ -111,6 +124,9 @@ public class SuperCalf {
 	
 	public ImageIcon getPhoto(){
 		return (photo);
+	}
+	public String getInfo(){
+		return(info);
 	}
 	
 	//SET METHODS
@@ -174,7 +190,47 @@ public class SuperCalf {
 		return;
 	}
 	
-	
+	//Method for displaying information
+	public void displayReport(){
+		ReportFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		ReportFrame.setResizable(false);
+		assembleFrame();		
+		
+		ReportFrame.pack();// display the window
+		ReportFrame.setLocation(800, 250);
+		ReportFrame.setVisible(true);
+		
+	}
+	//Method to assemble frame components
+	public void assembleFrame(){
+		
+		//Image Panel
+		JPanel cpic = new JPanel();
+		cpic.setLayout(new GridLayout(1, 1));
+		cpicButton = new JButton();
+		cpicButton.setBackground(Color.BLACK);
+		cpicButton.setPreferredSize(new Dimension(700, 200));
+		cpicButton.setIcon(this.getPhoto());
+		cpic.add(cpicButton);
+
+		
+		//Text Pane
+			JTextArea textArea = new JTextArea (this.getInfo());
+
+			textArea.setBackground(Color.BLACK);
+			textArea.setForeground(Color.CYAN);
+			textArea.setFont(new Font("Monospace", Font.PLAIN, 16));
+			textArea.setLineWrap(true);
+			textArea.setWrapStyleWord(true);
+			
+			//Main Panel
+			mainPanel.add(cpic, borderLayout.PAGE_START);
+			mainPanel.add(textArea, borderLayout.CENTER);
+			//mainPanel.add(entry, borderLayout.EAST);
+			
+
+			ReportFrame.getContentPane().add(mainPanel);
+}
 	
 
 }

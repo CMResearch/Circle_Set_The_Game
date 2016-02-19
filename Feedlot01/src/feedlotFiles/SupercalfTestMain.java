@@ -22,23 +22,23 @@ public class SupercalfTestMain {
 		double fw = myC.getFinishWeight();
 		
 		
-		System.out.println(n);
-		System.out.println(ear);
-		System.out.println(b);
-		System.out.println(c);
-		System.out.println(own);
-		System.out.println(prod);
-		System.out.println(s);
-		System.out.println(hrn);
-		System.out.println(hrmne);
-		System.out.println(ab);
-		System.out.println(sw);
-		System.out.println(fw);
+		System.out.println("CALF NAME: " + n);
+		System.out.println("EAR TAG: " + ear);
+		System.out.println("BREED: " + b);
+		System.out.println("COLOR: " + c);
+		System.out.println("OWNER: " + own);
+		System.out.println("PRODUCTIVITY: " + prod);
+		System.out.println("SOURCE: " + s);
+		System.out.println("HORNS: " + hrn);
+		System.out.println("HORMONES: " + hrmne);
+		System.out.println("ANTIBIOTICS: " + ab);
+		System.out.println("START WEIGHT: " + sw);
+		System.out.println("FINISH WEIGHT: " + fw);
 		*/
 
 		//Now to test the second contructor, 
 		// and the ability to set values using the set methods
-		SuperCalf myC2 = new SuperCalf("Bodacious", "Trump");
+		SuperCalf myC2 = new SuperCalf("Bodacious", "Ted Turner"); // Setting Calf Name and Owner
 		myC2.setBreed("Charolais");
 		myC2.setColor("Blond");
 		
@@ -60,14 +60,14 @@ public class SupercalfTestMain {
 		System.out.println("CALF NAME: " + nombre);
 		System.out.println("BREED: " + brd);
 		System.out.println("COLOR" + clr);
-		System.out.println("Owner Name: " + ownr);
-		System.out.println(prodt);
-		System.out.println(srce);
-		System.out.println(hrns);
-		System.out.println(hrmnes);
-		System.out.println(anb);
-		System.out.println(stw);
-		System.out.println(fnw);
+		System.out.println("OWNER NAME: " + ownr);
+		System.out.println("PRODUCTIVITY: " + prodt);
+		System.out.println("SOURCE: " + srce);
+		System.out.println("HORNS: " + hrns);
+		System.out.println("HORMONES: " + hrmnes);
+		System.out.println("ANTIBIOTICS: " + anb);
+		System.out.println("START WEIGHT: " + stw);
+		System.out.println("FINISH WEIGHT: " + fnw);
 
 		FeederCalves myF = new FeederCalves();
 		

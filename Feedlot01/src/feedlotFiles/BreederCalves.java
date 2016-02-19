@@ -10,6 +10,7 @@ public class BreederCalves extends SuperCalf {
 	private String antibiotics;
 	private String diet;
 	private ImageIcon photo;
+	private String info;
 	
 	// CONSTRUCTOR
 	public BreederCalves(){
@@ -19,6 +20,7 @@ public class BreederCalves extends SuperCalf {
 		antibiotics = "Baytril (as needed)";
 		diet = "Grass / Crystalix / Protein & Silage";
 		photo = new ImageIcon(getClass().getResource("Breeders.jpg"));
+		info = "\n\n\nThis page under contruction.  Please try back again soon.\n\n\n";
 	}
 	
 	
@@ -50,4 +52,11 @@ public class BreederCalves extends SuperCalf {
 	 public ImageIcon getPhoto(){
 		 return(photo);
 	 }
+	 
+	 @Override
+	 public String getInfo(){
+		 return(info);
+	 }
+
+	
 }

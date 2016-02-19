@@ -12,6 +12,7 @@ public class FeederCalves extends SuperCalf{
 	private double startWeight;
 	private double finishWeight;
 	private ImageIcon photo;
+	private String info;
 	
 	// CONSTRUCTOR
 	public FeederCalves(){
@@ -22,6 +23,7 @@ public class FeederCalves extends SuperCalf{
 		startWeight = 175.0;
 		finishWeight = 550.0;
 		photo = new ImageIcon(getClass().getResource("Feeders.jpg"));
+		info = "\n\n\nThis page under contruction.  Please try back again soon.\n\n\n";
 	}
 	
 	// GET METHODS (Specific to this subclass)

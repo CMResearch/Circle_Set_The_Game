@@ -13,6 +13,7 @@ public class BackgroundCalves extends SuperCalf{
 	private double startWeight;
 	private double finishWeight;
 	private ImageIcon photo;
+	private String info;
 	
 	// CONSTRUCTOR
 	public BackgroundCalves(){
@@ -25,6 +26,7 @@ public class BackgroundCalves extends SuperCalf{
 		startWeight = 350.0;
 		finishWeight = 750.0;		
 		photo = new ImageIcon(getClass().getResource("Backgrounders.jpg"));
+		info = "\n\n\nThis page under contruction.  Please try back again soon.\n\n\n";
 	}
 	
 	

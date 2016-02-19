@@ -1,5 +1,12 @@
 package feedlotFiles;
 
+//Unless otherwise indicated, all code is original,
+//Created by Steve Creigh as part of 
+//CS-120-A-2016P Data Structures and Program Design
+//February 2016, Carroll College, Helena MT
+
+
+
 import java.util.Scanner;
 public class FirstAttempt {
 	
@@ -59,7 +66,7 @@ public class FirstAttempt {
 			weights [r][c] = fWeight[r];
 			}
 		
-		for (double d : gain){
+		for (double d : gain){  //From Dietel: Java How to Program pg. 232  Fig. 6.13
 			total += d;
 			AverageGain = total/gain.length;
 		}
