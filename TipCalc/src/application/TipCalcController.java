@@ -25,7 +25,7 @@ public class TipCalcController {
 		@FXML
 		private TextField tipPercentageTextField;
 		@FXML
-		private Slider tipPercentageSlider;
+		private Slider tipPercentageSlider;///hey hey hey person 2 has made change
 		@FXML
 		private TextField tipTextField;
 		@FXML
