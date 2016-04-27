@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Slider?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane xmlns="http://javafx.com/javafx/8.0.65" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.TipCalcController">
+   <center>
+      <GridPane BorderPane.alignment="CENTER">
+        <columnConstraints>
+          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" />
+            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" />
+        </columnConstraints>
+        <rowConstraints>
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+        </rowConstraints>
+         <children>
+            <Slider fx:id="tipPercentageSlider" max="50.0" minorTickCount="5" onDragDetected="#initialize" prefHeight="14.0" prefWidth="187.0" showTickMarks="true" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+            <TextField fx:id="amountTextField" promptText="Enter cost of meal" GridPane.columnIndex="1" />
+            <Label alignment="CENTER" contentDisplay="RIGHT" prefHeight="17.0" prefWidth="141.0" text="Meal Amount" textAlignment="CENTER" textFill="#38a40d">
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font></Label>
+            <Label fx:id="tipPercentageLabel" alignment="CENTER" prefHeight="17.0" prefWidth="147.0" text="Tip Percentage" GridPane.rowIndex="1">
+               <font>
+                  <Font name="System Italic" size="12.0" />
+               </font></Label>
+            <TextField fx:id="tipPercentageTextField" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+            <Button fx:id="calculateButton" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onAction="#calculateButtonPressed" text="CALCULATE" textFill="#0d3dda" GridPane.columnIndex="1" GridPane.rowIndex="7" />
+            <TextField fx:id="tipTextField" GridPane.columnIndex="1" GridPane.rowIndex="5" />
+            <TextField fx:id="totalTextField" GridPane.columnIndex="1" GridPane.rowIndex="6" />
+            <Label alignment="CENTER" prefHeight="17.0" prefWidth="148.0" text="Tip Amount" textFill="#b23fa2" GridPane.rowIndex="5">
+               <font>
+                  <Font name="System Bold Italic" size="12.0" />
+               </font></Label>
+            <Label alignment="CENTER" prefHeight="17.0" prefWidth="149.0" text="Meal Total" GridPane.rowIndex="6">
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font></Label>
+         </children>
+      </GridPane>
+   </center>
+</BorderPane>
