@@ -5,7 +5,7 @@ import java.util.Scanner;
 // http://java2novice.com/java-interview-programs/string-reverse-recursive/
 // Unless otherwise noted, all commenting is my own as a means of tracing and understanding the recursive process
 // (it's still a mind-twisting concept, but I think I grasp the basics)
-//It was made more challenging to understand without the use of ToSubString, but the declination
+// It was made more challenging to understand without the use of ToSubString or similar, but the declination
 // process is brilliant
 
 public class StringReversal_Array {
@@ -29,7 +29,7 @@ public class StringReversal_Array {
 
 			char outPut = inArray[0]; //declares and initializes a character equal to the value at index 0 in the inArray
 
-			char[] localArray = new char[inArray.length-1]; //  DECLINATION moving the index backwards one character at a time with each iteration
+			char[] localArray = new char[inArray.length-1]; // 
 
 			System.arraycopy(inArray, 1, localArray, 0, inArray.length-1); //copies the item in inArray position 1 to localArray position 0
 
@@ -45,7 +45,7 @@ public class StringReversal_Array {
 		else {
 
 			outArray[0]= inArray[0]; // the array length is no longer greater than 1, sooo....
-			System.out.println(outArray[0]); // show process visually
+			System.out.println(outArray[0]); // show process visually - debugging
 			return inArray[0]; //it returns the value at index 0
 	
 

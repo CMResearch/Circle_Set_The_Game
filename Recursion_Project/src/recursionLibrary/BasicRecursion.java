@@ -10,8 +10,10 @@ public class BasicRecursion {
 	
 	
 	public static void main(String args[]){
-		int result;
+		
 		Scanner userEntry = new Scanner(System.in);
+		
+		// User Input
 		System.out.print("Please enter a number, preferably larger than 10: ");
 		userNumber = userEntry.nextInt();
 		System.out.print("Excellent. Now enter a second number, preferably less than ten: ");
@@ -19,7 +21,7 @@ public class BasicRecursion {
 		System.out.println(userFactor + " could be subtracted from " +userNumber + " " + RecursiveProcess(userNumber, userFactor, 0) + " times.");
 		
 	
-		
+		userEntry.close();
 	}
 	
 	public static int RecursiveProcess(int a, int b, int c){
@@ -32,7 +34,7 @@ public class BasicRecursion {
 		result = a;
 		a = result - b;
 		return RecursiveProcess(a,b,c+1);
-		}
+		} //end RecursiveProcess method
 
 		
 
@@ -40,4 +42,4 @@ public class BasicRecursion {
 		
 
 	
-}
+}// end class

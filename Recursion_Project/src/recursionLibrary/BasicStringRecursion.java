@@ -15,7 +15,7 @@ public class BasicStringRecursion {
 		Scanner userEntry = new Scanner(System.in);
 
 		
-		
+		// User input 
 		System.out.print("Give me a word, any word: ");
 		String userString = userEntry.next();
 		
@@ -39,7 +39,7 @@ public class BasicStringRecursion {
 		System.out.println(c);
 		
 		return RecursiveOperation(a, index+1);
-	}
+	}// end RecursiveOperation
 	
 
 	
