@@ -36,7 +36,7 @@ public class SampleCardForSet {
        cardShape = shape;
        cardFill = fill;
        cardNumberOfShapes = numberOfShapes;
-    }
+    }   //added texgt for commit
 
     public void draw(java.awt.Graphics gameGraphics, int topLeftCornerOfCardX, int topLeftCornerOfCardY, int widthOfCard, int heightOfCard )
     {   // draw border
