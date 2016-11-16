@@ -70,7 +70,7 @@ public class Circle_Set_Controller  extends JFrame  implements MouseListener {
         g.drawString("Try to avoid clicking",getSize().width/2-40,getSize().height/2+20); // arbitrary placement
 
       }
-
+      //comment added for commit
       public void mousePressed(MouseEvent evt) {
         // in this case, I move card 4 no matter where clicked in the JFrame
           int c = 4;
